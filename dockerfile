@@ -14,6 +14,8 @@ COPY . /app/
 # Install dependencies from requirements.txt
 #RUN pip install --no-cache-dir -r requirements.txt
 RUN pip install --upgrade pip
+EXPOSE 8000
 
 # Specify the command to run when the container starts
-CMD ["python", "app.py"]
+CMD ["python", "app.py",runserver 0.0.0.0:8000]
+#CMD source venv1/bin/activate && python3 manage.py runserver 0.0.0.0:8000
