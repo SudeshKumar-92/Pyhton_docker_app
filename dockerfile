@@ -5,7 +5,7 @@ FROM python:3.10-slim
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-COPY requirements.txt /app/
+COPY requirements.txt
 # Set the working directory inside the container
 WORKDIR /app
 
@@ -13,7 +13,8 @@ WORKDIR /app
 COPY . /app/
 
 # Install dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
+#RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --upgrade pip
 
 # Specify the command to run when the container starts
 CMD ["python", "app.py"]
