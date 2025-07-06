@@ -1,3 +1,1 @@
-Django
-tzdata
-Flask==1.1.1
+flask
